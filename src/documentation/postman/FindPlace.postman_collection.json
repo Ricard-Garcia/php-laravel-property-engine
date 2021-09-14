@@ -1,0 +1,351 @@
+{
+	"info": {
+		"_postman_id": "772bc6f2-2b8e-4040-a384-e70dc7defe92",
+		"name": "FindPlace (Laravel)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8100/api/register?email=imricardgarcia@gmail.com&name=Ricard&password=123456&confirm_password=123456",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8100",
+					"path": [
+						"api",
+						"register"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "imricardgarcia@gmail.com"
+						},
+						{
+							"key": "name",
+							"value": "Ricard"
+						},
+						{
+							"key": "password",
+							"value": "123456"
+						},
+						{
+							"key": "confirm_password",
+							"value": "123456"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8100/api/login?email=imricardgarcia@gmail.com&password=123456",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8100",
+					"path": [
+						"api",
+						"login"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "imricardgarcia@gmail.com"
+						},
+						{
+							"key": "password",
+							"value": "123456"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add property",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n    \"title\": \"Amazing apartment in Reus\",\n    \"imageURL\":\"https://images.unsplash.com/photo-1564078516393-cf04bd966897?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80\",\n    \"street\": \"Gardens avenue\",\n    \"number\": \"12\",\n    \"city\": \"NYC\",\n    \"province\": \"NYC\",\n    \"country\": \"USA\",\n    \"type\": \"flat/apartment\",\n    \"description\": \"This is the description of the property\",\n    \"contact_mail\": \"hola@assemblerschool.com\",\n    \"contact_phone\": \"344767574657\",\n    \"condition\": \"new\",\n    \"room\": \"2\",\n    \"bath\": \"1\",\n    \"price\": 500000,\n    \"pet\": true,\n    \"lift\": false,\n    \"garden\": true,\n    \"air_conditioning\": true,\n    \"swimming_pool\": false,\n    \"terrace\": true,\n    \"publication_date\": \"2021/05/23 10:25:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8100/api/properties",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8100",
+					"path": [
+						"api",
+						"properties"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "title",
+							"disabled": true
+						},
+						{
+							"key": "description",
+							"value": "desc",
+							"disabled": true
+						},
+						{
+							"key": "id",
+							"value": "3",
+							"disabled": true
+						},
+						{
+							"key": "street",
+							"value": "aragó",
+							"disabled": true
+						},
+						{
+							"key": "number",
+							"value": "34",
+							"disabled": true
+						},
+						{
+							"key": "city",
+							"value": "Barcelona",
+							"disabled": true
+						},
+						{
+							"key": "province",
+							"value": "Barcelona",
+							"disabled": true
+						},
+						{
+							"key": "country",
+							"value": "Catalunya",
+							"disabled": true
+						},
+						{
+							"key": "status",
+							"value": "available",
+							"disabled": true
+						},
+						{
+							"key": "type",
+							"value": "flat/apartment",
+							"disabled": true
+						},
+						{
+							"key": "contact_email",
+							"value": "aloha@hola.com",
+							"disabled": true
+						},
+						{
+							"key": "contact_phone",
+							"value": "23344232334",
+							"disabled": true
+						},
+						{
+							"key": "condition",
+							"value": "new",
+							"disabled": true
+						},
+						{
+							"key": "room",
+							"value": "2",
+							"disabled": true
+						},
+						{
+							"key": "bath",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "size",
+							"value": "67",
+							"disabled": true
+						},
+						{
+							"key": "price",
+							"value": "400000",
+							"disabled": true
+						},
+						{
+							"key": "pet",
+							"value": "false",
+							"disabled": true
+						},
+						{
+							"key": "garden",
+							"value": "true",
+							"disabled": true
+						},
+						{
+							"key": "air_conditioning",
+							"value": "true",
+							"disabled": true
+						},
+						{
+							"key": "swimming_pool",
+							"value": "false",
+							"disabled": true
+						},
+						{
+							"key": "terrace",
+							"value": "true",
+							"disabled": true
+						},
+						{
+							"key": "created_at",
+							"value": "08/30/2021",
+							"disabled": true
+						},
+						{
+							"key": "updated_at",
+							"value": "08/30/2021",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get property",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8100/api/properties/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8100",
+					"path": [
+						"api",
+						"properties",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all properties",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8100/api/properties",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8100",
+					"path": [
+						"api",
+						"properties"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update property",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n    \"title\": \"Amazing apartment in Reus!\",\n    \"description\": \"Hello, this is a description\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8100/api/properties/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8100",
+					"path": [
+						"api",
+						"properties",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "1|7RB1dqpW5IHf18VT6yntQ98F5d8HnRqVbNYtzyvg",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
