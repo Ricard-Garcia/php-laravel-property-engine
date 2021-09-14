@@ -25,7 +25,7 @@ class PropertyController extends BaseController
             'title' => 'required',
             'description' => 'required'
         ]);
-        if($validator->fails()){
+        if ($validator->fails()) {
             return $this->sendError($validator->errors());
         }
         $property = Property::create($input);
@@ -42,6 +42,14 @@ class PropertyController extends BaseController
         return $this->sendResponse(new PropertyResource($property), 'Property fetched.');
     }
 
+    public function search($query)
+    {
+        $property = Property::find($query);
+        if (is_null($property)) {
+            return $this->sendError('Property does not exist.');
+        }
+        return $this->sendResponse(new PropertyResource($property), 'Property fetched.');
+    }
 
     public function update(Request $request, Property $property)
     {
@@ -52,7 +60,7 @@ class PropertyController extends BaseController
             'description' => 'required'
         ]);
 
-        if($validator->fails()){
+        if ($validator->fails()) {
             return $this->sendError($validator->errors());
         }
 
