@@ -11,6 +11,13 @@ use App\Http\Resources\Property as PropertyResource;
 class PropertyController extends BaseController
 {
 
+    public function search($query)
+    {
+        $property = Property::where("city", $query)->get();
+        return $this->sendResponse(new PropertyResource($property), 'Property fetched.');
+    }
+
+
     public function index()
     {
         $properties = Property::all();
@@ -36,15 +43,6 @@ class PropertyController extends BaseController
     public function show($id)
     {
         $property = Property::find($id);
-        if (is_null($property)) {
-            return $this->sendError('Property does not exist.');
-        }
-        return $this->sendResponse(new PropertyResource($property), 'Property fetched.');
-    }
-
-    public function search($query)
-    {
-        $property = Property::find($query);
         if (is_null($property)) {
             return $this->sendError('Property does not exist.');
         }

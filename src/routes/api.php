@@ -15,7 +15,8 @@ use App\Http\Controllers\API\PropertyController;
 Route::post('login', [AuthController::class, 'signin']);
 Route::post('register', [AuthController::class, 'signup']);
 
-Route::middleware('auth:sanctum')->group( function () {
-    Route::resource('properties', PropertyController::class);
-    Route::resource('favorites', FavoriteController::class);
+Route::middleware('auth:sanctum')->group(function () {
+    //Route::resource('properties', PropertyController::class);
+    Route::get('properties', [PropertyController::class, 'search']);
+    //Route::resource('favorites', FavoriteController::class);
 });
