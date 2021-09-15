@@ -7,20 +7,23 @@ use App\Http\Controllers\API\BaseController as BaseController;
 use Validator;
 use App\Models\Property;
 use App\Http\Resources\Property as PropertyResource;
+use App\Http\Filters\PropertyFilters;
 
 class PropertyController extends BaseController
 {
 
-    public function search($query)
-    {
-        $property = Property::where("city", $query)->get();
-        return $this->sendResponse(new PropertyResource($property), 'Property fetched.');
-    }
+    // public function search($query)
+    // {
+    //     $property = Property::where("city", $query)->get();
+    //     return $this->sendResponse(new PropertyResource($property), 'Property fetched.');
+    // }
 
 
-    public function index()
+    public function index(Request $request)
     {
-        $properties = Property::all();
+
+        $properties = PropertyFilters::apply($request);
+        // $properties = Property::all();
         return $this->sendResponse(PropertyResource::collection($properties), 'Property fetched.');
     }
 
