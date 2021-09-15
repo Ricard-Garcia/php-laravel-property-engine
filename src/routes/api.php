@@ -19,3 +19,4 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::resource('properties', PropertyController::class);
     //Route::resource('favorites', FavoriteController::class);
 });
+

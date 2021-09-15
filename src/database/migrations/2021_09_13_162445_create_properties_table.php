@@ -30,7 +30,7 @@ class CreatePropertiesTable extends Migration
             $table->string('condition');
             $table->string('room');
             $table->string('bath');
-            // $table->string('size');
+            $table->string('size');
             $table->integer('price');
             $table->boolean('pet');
             $table->boolean('lift');

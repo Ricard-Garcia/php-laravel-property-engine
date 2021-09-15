@@ -23,7 +23,7 @@ class Property extends JsonResource
         'condition' => $this->condition,
         'room' => $this->room,
         'bath' => $this->bath,
-        // 'size' => $this->size,
+        'size' => $this->size,
         'price' => $this->price,
         'pet' => $this->pet,
         'lift' => $this->lift,
@@ -32,8 +32,8 @@ class Property extends JsonResource
         'swimming_pool' => $this->swimming_pool,
         'terrace' => $this->terrace,
         'publication_date' => $this->publication_date,
-        'created_at' => $this->created_at->format('m/d/Y'),
-        'updated_at' => $this->updated_at->format('m/d/Y'),
+        // 'created_at' => $this->created_at->format('m/d/Y'),
+        // 'updated_at' => $this->updated_at->format('m/d/Y'),
         ];
     }
 }
