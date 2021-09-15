@@ -23,11 +23,11 @@ class CreatePropertiesTable extends Migration
             $table->string('province');
             $table->string('country');
             // $table->string('status');
-            $table->string('type');
+            $table->enum('type', ['flat/apartment', 'house', 'duplex', 'penthouse']);
             $table->text('description');
             $table->string('contact_mail');
             $table->string('contact_phone');
-            $table->string('condition');
+            $table->enum('condition', ['new', 'good', 'reform']);
             $table->string('room');
             $table->string('bath');
             $table->string('size');

@@ -17,15 +17,18 @@ class PropertyFilters
         if ( $filters->has("q")){
             $properties = $properties->where("city", "LIKE", "%" . $filters->get('q') . "%");
         }
-
+        
         // type
-        if ($filters->has("type")){
-            $properties = $properties->whereIn("type", $filters->get("type"));
+        $typeArr = [];
+        if ($filters->has('type_like')){
+            echo("ARRAY ".$typeArr);
+            array_push($typeArr, $filters->get('type_like'));
+            $properties = $properties->whereIn('type', $typeArr);
         }
-       
+
         // condition
-        if ($filters->has("condition")){
-            $properties = $properties->whereIn("condition", $filters->get("condition"));
+        if ($filters->has("condition_like")){
+            $properties = $properties->whereIn("condition", $filters->get("condition_like"));
         }
 
         // rooms

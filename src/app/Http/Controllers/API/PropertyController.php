@@ -12,13 +12,6 @@ use App\Http\Filters\PropertyFilters;
 class PropertyController extends BaseController
 {
 
-    // public function search($query)
-    // {
-    //     $property = Property::where("city", $query)->get();
-    //     return $this->sendResponse(new PropertyResource($property), 'Property fetched.');
-    // }
-
-
     public function index(Request $request)
     {
 
