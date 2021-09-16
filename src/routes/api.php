@@ -16,8 +16,8 @@ Route::post('login', [AuthController::class, 'signin']);
 Route::post('register', [AuthController::class, 'signup']);
 
 
+Route::resource('properties', PropertyController::class);
 Route::middleware('auth:sanctum')->group(function () {
-    Route::resource('properties', PropertyController::class);
     //Route::resource('favorites', FavoriteController::class);
 });
 
