@@ -23,7 +23,7 @@ class Property extends Model
     'condition',
     'room',
     'bath',
-    // 'size',
+    'size',
     'price',
     'pet',
     'lift',

@@ -7,13 +7,16 @@ use App\Http\Controllers\API\BaseController as BaseController;
 use Validator;
 use App\Models\Property;
 use App\Http\Resources\Property as PropertyResource;
+use App\Http\Filters\PropertyFilters;
 
 class PropertyController extends BaseController
 {
 
-    public function index()
+    public function index(Request $request)
     {
-        $properties = Property::all();
+
+        $properties = PropertyFilters::apply($request);
+        // $properties = Property::all();
         return $this->sendResponse(PropertyResource::collection($properties), 'Property fetched.');
     }
 
@@ -25,7 +28,7 @@ class PropertyController extends BaseController
             'title' => 'required',
             'description' => 'required'
         ]);
-        if($validator->fails()){
+        if ($validator->fails()) {
             return $this->sendError($validator->errors());
         }
         $property = Property::create($input);
@@ -42,7 +45,6 @@ class PropertyController extends BaseController
         return $this->sendResponse(new PropertyResource($property), 'Property fetched.');
     }
 
-
     public function update(Request $request, Property $property)
     {
         $input = $request->all();
@@ -52,7 +54,7 @@ class PropertyController extends BaseController
             'description' => 'required'
         ]);
 
-        if($validator->fails()){
+        if ($validator->fails()) {
             return $this->sendError($validator->errors());
         }
 
