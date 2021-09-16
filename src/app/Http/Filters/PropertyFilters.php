@@ -31,20 +31,23 @@ class PropertyFilters
         }
 
         // rooms
-        if($filters->has("room_ne")){
-            $properties = $properties->whereIn("room", "IS NOT", $filters->get("room_ne"));
-        };
         if($filters->has("room")){
-            $properties = $properties->whereIn("room", $filters->get("room"));
+            $roomArr = explode(",", $filters->get("room"));
+            $properties = $properties->whereIn("room", $roomArr);
         };
-
+        if($filters->has("room_gte")){
+            $properties = $properties->orWhere("room", ">=", $filters->get("room_gte"));
+        };
+        
         // bath
-        if($filters->has("bath_ne")){
-            $properties = $properties->whereIn("bath", "IS NOT", $filters->get("bath_ne"));
-        };
         if($filters->has("bath")){
-            $properties = $properties->whereIn("bath", $filters->get("bath"));
+            $bathArr = explode(",", $filters->get("bath"));
+            $properties = $properties->whereIn("bath", $bathArr);
         };
+        if($filters->has("bath_gte")){
+            $properties = $properties->orWhere("bath", ">=", $filters->get("bath_gte"));
+        };
+        
 
         // price
         if($filters->has("price_lte")){
